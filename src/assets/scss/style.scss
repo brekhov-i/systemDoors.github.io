@@ -19,6 +19,11 @@ button {
   margin: 0;
   border: none;
   background: transparent;
+  cursor: pointer;
+  &.primery {
+    background-color: #4a86e8;
+    color: #ffffff;
+  }
 }
 a {
   text-decoration: none;
@@ -64,6 +69,10 @@ nav {
     max-width: 450px;
     text-align: center;
   }
+  &.recommendation,
+  &.installedDoors {
+    padding-bottom: 135px;
+  }
 }
 .logo {
   width: 160px;
@@ -99,9 +108,77 @@ nav {
   grid-gap: 30px;
   margin-top: 60px;
 }
+.reviews__carts {
+  display: grid;
+  grid-template-columns: repeat(4, 330px);
+  grid-template-rows: repeat(auto, 491px);
+  width: 100%;
+  height: auto;
+  grid-gap: 30px;
+  margin-top: 60px;
+  @include desktop {
+    grid-template-columns: repeat(4, 270px);
+    grid-template-rows: repeat(auto, 407px);
+  }
+}
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  &__pagination {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    max-width: 450px;
+    button {
+      width: auto;
+      height: auto;
+    }
+    .swiper-pagination {
+      position: relative;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      &-bullet {
+        border-radius: 2px;
+        width: 12px;
+        height: 12px;
+        opacity: 1;
+        background-color: #e9e9e9;
+        transition: 0.5s all linear;
+        position: relative;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+        .touch {
+          width: 0%;
+          height: 0%;
+          background-color: #4a86e8;
+          transition: 0.3s all linear;
+        }
+        &-active {
+          width: 16px;
+          height: 16px;
+          .touch {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
 
 //COMPONENTS
 @import "./components/header.scss";
 @import "./components/footer.scss";
 @import "./components/category-card.scss";
 @import "./components/product-card.scss";
+@import "./components/best-company.scss";
+@import "./components/reviews.scss";

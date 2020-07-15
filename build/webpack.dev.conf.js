@@ -16,7 +16,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       errors: true,
     },
     port: 8082,
-    //host: '192.168.0.105'
+    //host: "192.168.0.105",
   },
   plugins: [
     new webpack.SourceMapDevToolPlugin({

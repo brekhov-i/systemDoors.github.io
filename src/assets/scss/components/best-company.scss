@@ -1,0 +1,113 @@
+/*
+* Стили для блока ЛУЧШИЕ КОМПАНИИ
+*/
+.bestCompany {
+  width: 100%;
+  height: auto;
+  padding-top: 125px;
+  padding-bottom: 116px;
+  background-image: url("../img/bg/bestCompany-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__content {
+    display: flex;
+    height: 100%;
+  }
+  &__text {
+    margin-right: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 20px;
+  }
+  &__carts {
+    display: grid;
+    grid-template-columns: repeat(3, 270px);
+    grid-gap: 30px;
+    justify-content: end;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 25px;
+  }
+  &__description {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #ffffff;
+  }
+  &__btn {
+    margin-top: auto;
+    padding: 14px 30px;
+    text-transform: uppercase;
+  }
+
+  @include desktop {
+    &__title {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    &__btn {
+      font-size: 14px;
+    }
+    &__carts {
+      grid-template-columns: repeat(3, 193px);
+      grid-column-gap: 46px;
+      grid-row-gap: 40px;
+    }
+  }
+
+  //Стили КАРТРОЧКИ КОМПАНИИ
+  &__cart {
+    position: relative;
+    max-width: 270px;
+    &:nth-child(5) {
+      grid-column: 3 / span 1;
+    }
+    &:nth-child(4) {
+      grid-column: 2 / span 1;
+    }
+    &--img {
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 15px 32px;
+      img {
+        max-width: 100%;
+      }
+    }
+    &--content {
+      width: calc(100% - 24px);
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.4);
+      border-radius: 2px;
+      margin: 0 auto;
+      position: relative;
+      top: -16px;
+    }
+    &--title {
+      font-size: 16px;
+      line-height: 150%;
+      color: #ffffff;
+    }
+    &--text {
+      font-family: "Roboto", sans-serif;
+      font-size: 14px;
+      line-height: 150%;
+      color: #ffffff;
+    }
+
+    @include desktop {
+      &--content {
+        top: -10px;
+        width: 100%;
+      }
+    }
+  }
+}
